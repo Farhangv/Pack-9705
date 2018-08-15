@@ -151,3 +151,9 @@ FROM HumanResources.Employee
 WHERE YEAR(HireDate) = 2007
 GROUP BY YEAR(HireDate), MONTH(HireDate)
 HAVING COUNT(BusinessEntityID) < 50
+--------------------
+SELECT YEAR(HireDate) 'Year', MONTH(HireDate) 'Month', COUNT(BusinessEntityID) 'EmployeesCount'
+FROM HumanResources.Employee
+GROUP BY YEAR(HireDate), MONTH(HireDate)
+HAVING COUNT(BusinessEntityID) < 50
+ORDER BY [Year] DESC
