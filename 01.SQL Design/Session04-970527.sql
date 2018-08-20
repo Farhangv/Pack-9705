@@ -1,5 +1,6 @@
 USE AdventureWorks
 --------------------
+
 SELECT ProductId, Name, 
 (
 	SELECT Name 
