@@ -104,8 +104,8 @@ GO
 CREATE TABLE Book
 (
 	Id INT IDENTITY PRIMARY KEY,
-	Title NVARCHAR(50) NOT NULL,
-	ISBN CHAR(13),
+	Title NVARCHAR(100) NOT NULL,
+	ISBN CHAR(100),
 	PublishYear SMALLINT
 )
 GO
@@ -114,8 +114,8 @@ GO
 CREATE TABLE Person
 (
 	Id INT PRIMARY KEY,
-	Name NVARCHAR(50),
-	Family NVARCHAR(50)
+	Name NVARCHAR(100),
+	Family NVARCHAR(100)
 )
 GO
 CREATE TABLE Author
@@ -129,7 +129,7 @@ CREATE TABLE Subscriber
 (
 	PersonId INT PRIMARY KEY,
 	CellPhone CHAR(11),
-	Email VARCHAR(100)
+	Email VARCHAR(200)
 )
 GO
 CREATE TABLE Book_Author
@@ -156,8 +156,6 @@ INSERT INTO Person(Id, Name, Family)
 SELECT BusinessEntityId, FirstName, LastName
 FROM AdventureWorks.Person.Person
 
-GO
-SELECT * FROM AdventureWorks.Person.Person
 GO
 INSERT INTO Author(PersonId, Birthdate, Biography)
 SELECT  BusinessEntityID, BirthDate,JobTitle
