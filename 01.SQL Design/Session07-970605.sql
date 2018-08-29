@@ -128,7 +128,7 @@ GO
 CREATE TABLE Subscriber
 (
 	PersonId INT PRIMARY KEY,
-	CellPhone CHAR(11),
+	CellPhone CHAR(20),
 	Email VARCHAR(200)
 )
 GO
