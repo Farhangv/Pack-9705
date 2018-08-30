@@ -13,7 +13,7 @@ SELECT co.Name 'CategoryName',
 	ON p.ProductID = s.ProductID
 	WHERE c.ProductCategoryID = co.ProductCategoryID
 	GROUP BY p.Name 
-	ORDER BY SUM(LineTotal) DESC
+	ORDER BY SUM(OrderQty) DESC
 ) 'ProductName'
 FROM Production.ProductCategory co
 GO
