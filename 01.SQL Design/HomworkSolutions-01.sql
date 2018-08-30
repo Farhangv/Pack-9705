@@ -13,6 +13,9 @@ SELECT co.Name 'CategoryName',
 	ON p.ProductID = s.ProductID
 	WHERE c.ProductCategoryID = co.ProductCategoryID
 	GROUP BY p.Name 
+	--بر اساس مجموع مبلغ فروش
+	--ORDER BY SUM(LineTotal) DESC 
+	--براساس مجموع تعداد فروش
 	ORDER BY SUM(OrderQty) DESC
 ) 'ProductName'
 FROM Production.ProductCategory co
