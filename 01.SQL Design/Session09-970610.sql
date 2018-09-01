@@ -213,4 +213,42 @@ BEGIN
 	SELECT * FROM [User] WHERE Id = @UserId
 END
 GO
-
+CREATE PROC UserAuthenticate
+(
+	@Username NVARCHAR(50),
+	@Password NVARCHAR(50)
+)
+AS
+BEGIN
+	IF EXISTS
+		(
+			SELECT * 
+			FROM [User] 
+			WHERE Username = @Username AND 
+			PasswordHash = HASHBYTES('MD5', @Password)
+		)
+	BEGIN 
+		RETURN 1
+	END
+	ELSE
+	BEGIN
+		RETURN 0
+	END
+END
+GO
+DECLARE @Result INT
+EXEC @Result = UserAuthenticate 'chandler' , 'abcdef'
+SELECT @Result
+GO
+SELECT * 
+FROM INFORMATION_SCHEMA.TABLES
+GO
+USE AdventureWorks
+GO
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Product'
+GO
+SELECT * FROM INFORMATION_SCHEMA.CONSTRAINT_TABLE_USAGE
+WHERE TABLE_NAME = 'Product'
+GO
+EXEC sp_executesql N'SELECT * FROM Production.Product'
