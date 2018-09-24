@@ -36,7 +36,8 @@ namespace ReadKeyDemo
                         break;
 
                     default:
-                        break;
+                        continue;
+                        
                 }
 
             }
