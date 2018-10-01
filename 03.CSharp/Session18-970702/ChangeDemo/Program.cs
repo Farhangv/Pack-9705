@@ -27,7 +27,7 @@ namespace ChangeDemo
             Console.WriteLine("------------------");
             var y = new int[] { 10 };
             Console.WriteLine(y[0]);//10
-            ChangeArray(ref y);
+            ChangeArray(y);
             Console.WriteLine(y[0]);//11
 
             Console.ReadKey();
@@ -49,7 +49,7 @@ namespace ChangeDemo
             text = text + " Changed From Function";
         }
 
-        static void ChangeArray(ref int[] nums)
+        static void ChangeArray(int[] nums)
         {
             nums[0]++;
         }
