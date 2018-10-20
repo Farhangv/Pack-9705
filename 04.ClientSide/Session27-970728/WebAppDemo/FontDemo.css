@@ -1,0 +1,33 @@
+﻿@import url('/fonts/vazir.css');
+
+body {
+    direction: rtl;
+    font-size: 15px;
+}
+
+div {
+    border: 1px solid khaki;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+    div:first-child {
+        font-size: 1.4em;
+    }
+
+    div:nth-child(2) {
+        font-weight: 900;
+    }
+
+    div:nth-child(3) {
+        font-weight: 100;
+    }
+
+    div:nth-child(4) {
+        font-family: 'Courier New', Tahoma, Verdana;
+    }
+
+    div:nth-child(5) {
+        font-family: Vazir;
+    }

@@ -1,0 +1,17 @@
+﻿.important-news {
+    background-color: khaki;
+}
+.sport-news {
+    border: 2px solid #00ff21;
+    background-color: greenyellow;
+}
+div{
+    
+    background-color:#ccc;
+}
+
+#top-news{
+    font-weight:bold;
+    font-size:1.2em;
+    background-color:orangered;
+}
