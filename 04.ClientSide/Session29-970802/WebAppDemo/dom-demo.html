@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/main.css" rel="stylesheet" />
+</head>
+<body class="dom-demo">
+
+    <main class="container">
+        <input id="user_name" type="text" oninput="submitHandler()"/>
+        <input type="button" id="submit" value="ثبت" onclick="submitHandler()" />
+
+        <div id="name"></div>
+
+
+        <div id="tasks">
+            <div class="row">
+                <div class="col-md-5">
+                    <input class="form-control" id="task-name" placeholder="کار" />
+                </div>
+                <div class="col-md-5">
+                    <input class="form-control" id="task-due-date" placeholder="مهلت"/>
+
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-success btn-sm btn-block" onclick="addTask()">
+                        <span class="fa fa-save"></span>
+                        ذخیره
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>کار</th>
+                            <th>مهلت</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasks-table-body">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+            function submitHandler() {
+                var input_name = document.getElementById('user_name').value;
+                var name_div = document.getElementById('name');
+                name_div.innerHTML = `<h1>${input_name} به جاوا اسکریپت خوش آمدید!</h1>`;
+                //name_div.innerText = '<h1>به جاوااسکریپت خوش آمدید</h1>';
+
+            }
+
+            function addTask() {
+                let task_name = document.getElementById('task-name').value;
+                let task_due_date = document.getElementById('task-due-date').value;
+
+                let table_row = document.createElement('tr');
+                let table_task_col = document.createElement('td');
+                let table_date_col = document.createElement('td');
+                let table_last_col = document.createElement('td');
+                
+
+                table_task_col.innerHTML = task_name;
+                table_date_col.innerHTML = task_due_date;
+                let done_btn = document.createElement('button');
+                done_btn.setAttribute('class', 'btn btn-primary btn-sm');
+                done_btn.innerHTML = '<span class="glyphicon glyphicon-ok"></span>';
+
+
+                done_btn.setAttribute('onclick', 'doneTask(this)');
+
+
+                table_last_col.appendChild(done_btn);
+
+                table_row.appendChild(table_task_col);
+                table_row.appendChild(table_date_col);
+                table_row.appendChild(table_last_col);
+
+                let table_body = document.getElementById('tasks-table-body');
+                table_body.appendChild(table_row);
+
+            }
+    </script>
+</body>
+</html>

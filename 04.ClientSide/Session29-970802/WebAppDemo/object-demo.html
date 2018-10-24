@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <script>
+        let person = new Object();
+        person.name = "John";
+        person.family = "Doe";
+        person.age = 30;
+
+        console.log(`${person.name} ${person.family} : ${person.age}`);
+
+        //JSON
+        let personJSON =
+        {
+            name: "John",
+            family: "Doe",
+            age: 30,
+            introduce: function () {
+                console.log(`${this.name} ${this.family} : ${this.age}`);
+
+            }
+        };
+        personJSON.introduce();
+
+        //Constuctor
+        function Person() {
+            this.name = '';
+            this.family = '';
+            this.age = 0;
+        }
+
+        let anotherPerson = new Person();
+        anotherPerson.name = "john";
+
+    </script>
+</body>
+</html>

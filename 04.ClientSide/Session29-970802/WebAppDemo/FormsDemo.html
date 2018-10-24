@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/main.css" rel="stylesheet" />
+</head>
+<body class="forms-demo">
+    <main class="container">
+        <form action="FormActionDemo.aspx" method="post" class="form-horizontal">
+            <div class="form-group">
+                <label for="name" class="col-md-2 control-label">نام</label>
+                <div class="col-md-10">
+                    <input class="form-control" name="name" id="name" type="text" value="سمانه" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="family" class="col-md-2 control-label">نام خانوادگی</label>
+                <div class="col-md-10">
+                    <input class="form-control" id="family" name="family" value="بازگیری" readonly />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="age" class="col-md-2 control-label">سن</label>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <span class="input-group-addon">سن را وارد کنید</span>
+                        <input class="form-control" id="age" name="age" type="number" />
+                        <span class="input-group-addon">سال</span>
+                    </div>
+                </div>
+                <label for="email" class="col-md-2 control-label">ایمیل</label>
+                <div class="col-md-4">
+                    <input class="form-control" id="email" name="myemailaddress" type="email" placeholder="آدرس ایمیل" />
+                </div>
+            </div>
+            <input name="birthDate" type="date" />
+            <input name="pass" type="password" />
+            <label> 
+                خانم
+                <input name="gender" type="radio" value="F" checked />
+            </label>
+            <label for="g-male">
+                آقا
+            </label>
+                <input name="gender" id="g-male" type="radio" value="M" />
+            
+            قوانین را میپذیرم
+            <input name="approve" type="checkbox" checked />
+
+            <input name="photo" type="file" />
+            <input name="id" type="hidden" value="10" />
+            <input name="website" type="url" />
+            <select name="job" multiple>
+                <option value="-1">مقداری را انتخاب کنید</option>
+                <option value="1">برنامه نویس</option>
+                <option value="2">مهندس برق</option>
+                <option value="3">مهندس مکانیک</option>
+            </select>
+            <textarea name="description"></textarea>
+            <input type="submit" value="ثبت" />
+        </form>
+    </main>
+</body>
+</html>
