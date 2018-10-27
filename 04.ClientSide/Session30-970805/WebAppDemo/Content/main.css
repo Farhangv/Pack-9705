@@ -1,0 +1,71 @@
+﻿@import url(font-awesome.css);
+@import url(bootstrap-rtl.css);
+@import url(bootstrap-theme-rtl.css);
+@import url(../fonts/vazir.css);
+
+body {
+    direction:rtl;
+    font-family:Vazir;
+}
+
+main {
+    margin-top: 60px;
+}
+
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 0;
+        margin-right: -15px;
+    }
+}
+.fa {
+    font-size: 1.3em;
+}
+
+.table-hover > tbody > tr:hover {
+    background-color: #444 !important;
+    color:#ddd !important;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: #e3e3e3;
+}
+
+.table-demo .content-container{
+    width:150px;
+    height:150px;
+    border:1px solid #999;
+    overflow-y:scroll;
+}
+
+.forms-demo{
+    background: #44ea2e; /* Old browsers */
+    background: -moz-linear-gradient(top, #44ea2e 0%, #2989d8 50%, #207cca 66%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #44ea2e 0%,#2989d8 50%,#207cca 66%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #44ea2e 0%,#2989d8 50%,#207cca 66%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#44ea2e', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+}
+
+.button-demo .btn-default:hover {
+    height:80px;
+    vertical-align:middle;
+    padding:30px;
+}
+/*.img-demo .img-circle:hover {
+    border-radius: 5px;
+}*/
+
+.dom-demo #tasks{
+    margin-top:50px;
+}
+.dom-demo #tasks table{
+    margin-top: 30px;
+}
+
+.jquery-demo-2 #wrapper{
+    margin-top:50px;
+}
+
+.jquery-demo-2 #wrapper button{
+    margin:2px;
+}

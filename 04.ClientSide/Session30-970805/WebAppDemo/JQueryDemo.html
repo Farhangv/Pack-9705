@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/main.css" rel="stylesheet" />
+</head>
+<body class="dom-demo">
+
+    <main class="container">
+        <div id="tasks">
+            <div class="row">
+                <div class="col-md-5">
+                    <input class="form-control" id="task-name" placeholder="کار" />
+                </div>
+                <div class="col-md-5">
+                    <input class="form-control" id="task-due-date" placeholder="مهلت" />
+
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-success btn-sm btn-block" id="save-btn">
+                        <span class="fa fa-save"></span>
+                        ذخیره
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>کار</th>
+                            <th>مهلت</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tasks-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="Scripts/jquery-2.2.4.js"></script>
+    <script src="Scripts/jquery-demo.js" ></script>
+</body>
+</html>
