@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="Content/main.css" rel="stylesheet" />
+</head>
+<body class="ajax-demo">
+
+    <header id="page-header" class="container">
+
+    </header>
+
+    <main class="container"  style="margin-bottom:100px;">
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="get-data" class="btn btn-success btn-xs btn-block">
+                    دریافت آخرین خبر
+                </button>
+            </div>
+        </div>
+        <div class="jumbotron" style="margin-top:50px;" id="last-news"></div>
+
+        <hr/>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="button" id="get-products"  style="margin-bottom:30px;"
+                        class="btn btn-success btn-xs btn-block">
+                    دریافت لیست محصولات
+                </button>
+
+                <table class="table table-responsive  table-stripped table-hover">
+                    <thead>
+                        <tr>
+                            <th>کد محصول</th>
+                            <th>نام</th>
+                            <th>قیمت</th>
+                            <th>امتیاز</th>
+                            <th>تاریخ عرضه</th>
+                            <th>عکس</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <hr/>
+
+        <div class="row">
+            <div class="col-md-5">
+                <input type="text" id="name" placeholder="نام" class="form-control" />
+            </div>
+            <div class="col-md-5">
+                <input type="text" id="family" placeholder="نام خانوادگی" class="form-control" />
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-success btn-sm btn-block" id="send-btn">
+                    <span class="fa fa-save"></span>
+                    ذخیره
+                </button>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="Scripts/jquery-2.2.4.js"></script>
+    <script src="Scripts/bootstrap-rtl.js"></script>
+    <script>
+
+        (function () {
+
+            function sendData() {
+                $('#send-btn').off('click');
+                $('#send-btn').addClass('disabled');
+
+                let firstName = $('#name').val();
+                let lastName =  $('#family').val();
+
+                $.ajax({
+                    method: "POST",
+                    url: "/AjaxAction.aspx",
+                    data: { name: firstName, family: lastName }
+                })
+                    .done(function (data) {
+                        $('#name').parent().parent()
+                            .prepend(
+                            $('<div id="response-alert">')
+                                .addClass('alert alert-success alert-dismissable')
+                                .text(data)
+                                .append($('<a href="#" class="close" data-dismiss="alert"><span class="fa fa-close"></span></a>'))
+                            );
+                    })
+                    .fail(function () {
+                        $('#name').parent().parent()
+                            .prepend(
+                                $('<div id="response-alert">').addClass('alert alert-danger').text('خطا در درج اطلاعات')
+                            );
+                    })
+                    .always(function () {
+                        $('#send-btn').on('click', sendData);
+                        $('#send-btn').removeClass('disabled');
+
+                        setTimeout(function () {
+                            //$('#response-alert').remove();
+                            //$('#response-alert').slideUp(3000);
+                            $('#response-alert')
+                                .animate({ "fontSize": "+=10px" }, 1000)
+                                .animate({ "fontSize": "-=10px" }, 1000);
+                        }, 4000);
+                    });
+
+                $('#name').val('');
+                $('#family').val('');
+
+            }
+
+            function createStar(rate) {
+                //TODO: create start display
+                return rate;
+            }
+
+            $(function () {
+                $('#page-header').load('Menu.html');
+
+                $('#get-data').on('click', function () { 
+                    $('#last-news').load('/last-news.html');
+                    //$('#last-news').load('/JsonData/products.json');
+                });
+
+                $('#get-products').on('click', function () {
+                    $.getJSON('/JsonData/products.json', function (rsp) {
+                        //console.log(rsp);
+                        $(rsp.products).each(function (ix,product) {
+                            //console.log(product);
+                            $('<tr>')
+                                .append($('<td>').text(product.productId))
+                                .append($('<td>').text(product.productCode))
+                                .append($('<td>').text(product.price))
+                                .append($('<td>').text(createStar(product.starRating)))
+                                .append($('<td>').text(product.releaseDate))
+                                .append($('<td>').append($('<img>').attr('src', product.imageUrl).addClass('img-thumbnail img-product-list')))
+                                .appendTo($('#products-body'));
+                        });
+                    });
+                });
+
+                $('#send-btn').on('click', sendData);
+
+            });
+
+        })();
+
+
+
+    </script>
+</body>
+</html>
