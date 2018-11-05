@@ -1,0 +1,28 @@
+﻿@using MVCDemo.Models
+@{ 
+    ViewBag.Title = "مدیریت کاربران";
+}
+<div class="alert alert-success">
+    @ViewBag.Message
+</div>
+
+<hr />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>نام</th>
+            <th>فامیل</th>
+            <th>سن</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in ((List<Person>)ViewBag.Users))
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Family</td>
+                <td>@user.Age</td>
+            </tr>
+        }
+    </tbody>
+</table>

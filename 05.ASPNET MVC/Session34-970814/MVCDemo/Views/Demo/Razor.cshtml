@@ -1,0 +1,39 @@
+﻿@{
+
+    //Expression Block
+    var userRole = "admin";
+    var welcomeMessage = "";
+if (userRole == "admin")
+{
+    welcomeMessage = "مدیر، به سایت خوش آمدید";
+}
+else
+{
+    welcomeMessage = "کاربر گرامی به وبسایت خوش آمدید";
+}
+
+}
+
+@*Inline Expression*@
+@DateTime.Now is Now!
+<br />
+@welcomeMessage
+<br />
+<!--Comment-->
+@if (userRole == "admin")
+{
+<a href="#" class="btn btn-primary btn-block">ورود به کنترل پنل مدیریت</a>
+}
+
+@{
+        var count = 5;
+}
+
+<ul>
+    @for (int i = 1; i <= count; i++)
+        {
+    <li>@i</li>
+        }
+</ul>
+
+
