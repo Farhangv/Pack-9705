@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7fe587da57a44c078aceefcaac76579f" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="AWModel.Person" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.Product" Width="1.5" PointX="12.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.ProductCategory" Width="1.5" PointX="7.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.ProductInventory" Width="1.5" PointX="14.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.ProductPhoto" Width="1.5" PointX="15.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.ProductProductPhoto" Width="1.5" PointX="17.5" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.ProductSubcategory" Width="1.5" PointX="10" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.Customer" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.SalesOrderDetail" Width="3" PointX="9.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.SalesOrderHeader" Width="2.375" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AWModel.SalesPerson" Width="2.25" PointX="2.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="AWModel.FK_Customer_Person_PersonID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_Product_ProductSubcategory_ProductSubcategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_ProductInventory_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_ProductProductPhoto_Product_ProductID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_ProductSubcategory_ProductCategory_ProductCategoryID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_ProductProductPhoto_ProductPhoto_ProductPhotoID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_SalesOrderHeader_Customer_CustomerID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID" ManuallyRouted="false" />
+        <AssociationConnector Association="AWModel.FK_SalesOrderHeader_SalesPerson_SalesPersonID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
