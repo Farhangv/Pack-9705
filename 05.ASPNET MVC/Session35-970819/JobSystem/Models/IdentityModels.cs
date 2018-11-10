@@ -25,6 +25,5 @@ namespace JobSystem.Models
         {
             return new JobDbContext();
         }
-
     }
 }
