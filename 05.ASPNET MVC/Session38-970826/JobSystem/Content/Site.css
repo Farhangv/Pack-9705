@@ -1,0 +1,47 @@
+﻿body {
+    padding-bottom: 0;
+    direction: rtl;
+    font-family: Vazir;
+}
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand,
+    .navbar > .container-fluid .navbar-brand {
+        margin-left: 0;
+        margin-right: -15px;
+    }
+}
+
+.fa {
+    font-size: 1.2em;
+}
+
+body > header {
+    margin-top: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #eee;
+    padding: 40px 10px;
+    margin-top: 45px;
+}
+
+#wrapper {
+    padding: 15px;
+}
+
+    #wrapper > .row > aside {
+        border-left: 1px solid #aaa;
+    }
+
+    #wrapper main, #wrapper aside {
+        padding: 20px;
+        min-height: 400px;
+    }
+
+.bottom-space{
+    margin-bottom:20px;
+}
+.company-logo-details{
+    max-width:120px;
+}
