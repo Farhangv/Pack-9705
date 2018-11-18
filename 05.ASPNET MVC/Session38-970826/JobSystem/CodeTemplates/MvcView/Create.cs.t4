@@ -16,7 +16,7 @@ if(IsPartialView) {
 #>
 
 @{
-    ViewBag.Title = "<#= ViewName#>";
+    ViewBag.Title = "ثبت";
 <#
 if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>

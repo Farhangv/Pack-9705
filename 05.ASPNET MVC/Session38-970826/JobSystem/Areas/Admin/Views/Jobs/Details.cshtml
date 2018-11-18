@@ -1,10 +1,10 @@
 ﻿@model JobSystem.Models.Job
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "جزئیات";
 }
 
-<h2>Details</h2>
+<h2>جزئیات</h2>
 
 <div>
     <h4>Job</h4>
@@ -69,6 +69,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("بازگشت به فهرست", "Index")
 </p>

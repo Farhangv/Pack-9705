@@ -12,7 +12,7 @@ if(IsPartialView) {
 #>
 
 @{
-    ViewBag.Title = "لیست ";
+    ViewBag.Title = "فهرست";
 <#
 if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
@@ -37,7 +37,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>لیست </title>
+    <title>فهرست</title>
 </head>
 <body>
 <#

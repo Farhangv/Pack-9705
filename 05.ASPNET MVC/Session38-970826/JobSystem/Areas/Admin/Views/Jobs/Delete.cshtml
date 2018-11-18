@@ -1,7 +1,7 @@
 ﻿@model JobSystem.Models.Job
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "حذف";
 }
 
 <h2>Delete</h2>
@@ -73,7 +73,7 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="بله،پاکش کن" class="btn btn-danger" /> |
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
             @Html.ActionLink("بازگشت به لیست", "Index")
         </div>
     }

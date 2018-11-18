@@ -78,7 +78,7 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="حذف گردد" class="btn btn-danger" /> |
+            <input type="submit" value="حذف" class="btn btn-danger" /> |
             @Html.ActionLink("بازگشت به لیست", "Index")
         </div>
     }
