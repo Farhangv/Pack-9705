@@ -101,7 +101,6 @@ namespace <#= Namespace #>
 <# } #>
         }
 
-        // GET: <#= routePrefix #>/Details/5
 <# if (UseAsync) { #>
         public async Task<ActionResult> Details(<#= primaryKeyNullableTypeName #> id)
 <# } else { #>
@@ -124,7 +123,6 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // GET: <#= routePrefix #>/Create
         public ActionResult Create()
         {
 <# foreach (var property in relatedProperties.Values) { #>
@@ -133,11 +131,9 @@ namespace <#= Namespace #>
             return View();
         }
 
-        // POST: <#= routePrefix #>/Create
 <# if (IsOverpostingProtectionRequired) {
     foreach (var line in OverpostingWarningMessage.Split(new string[] { Environment.NewLine }, StringSplitOptions.None)) { 
 #>
-        // <#= line #>
 <# } } #>
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -167,7 +163,6 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // GET: <#= routePrefix #>/Edit/5
 <# if (UseAsync) { #>
         public async Task<ActionResult> Edit(<#= primaryKeyNullableTypeName #> id)
 <# } else { #>
@@ -193,11 +188,9 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // POST: <#= routePrefix #>/Edit/5
 <# if (IsOverpostingProtectionRequired) {
     foreach (var line in OverpostingWarningMessage.Split(new string[] { Environment.NewLine }, StringSplitOptions.None)) { 
 #>
-        // <#= line #>
 <# } } #>
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -223,7 +216,6 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // GET: <#= routePrefix #>/Delete/5
 <# if (UseAsync) { #>
         public async Task<ActionResult> Delete(<#= primaryKeyNullableTypeName #> id)
 <# } else { #>
@@ -246,7 +238,6 @@ namespace <#= Namespace #>
             return View(<#= ModelVariable #>);
         }
 
-        // POST: <#= routePrefix #>/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
 <# if (UseAsync) { #>

@@ -12,7 +12,7 @@ if(IsPartialView) {
 #>
 
 @{
-    ViewBag.Title = "<#= ViewName#>";
+    ViewBag.Title = "جزئیات";
 <#
 if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
@@ -37,7 +37,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title><#= ViewName #></title>
+    <title>جزئیات</title>
 </head>
 <body>
 <#
@@ -78,13 +78,13 @@ foreach (PropertyMetadata property in ModelMetadata.Properties) {
 string pkName = GetPrimaryKeyName();
 if (pkName != null) {
 #>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.<#= pkName #> }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("ویرایش", "Edit", new { id = Model.<#= pkName #> }) |
+    @Html.ActionLink("بازگشت به لیست", "Index")
 <#
 } else {
 #>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("ویرایش", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("بازگشت به لیست", "Index")
 <#
 }
 #>

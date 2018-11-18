@@ -12,7 +12,7 @@ if(IsPartialView) {
 #>
 
 @{
-    ViewBag.Title = "<#= ViewName#>";
+    ViewBag.Title = "لیست ";
 <#
 if (!String.IsNullOrEmpty(LayoutPageFile)) {
 #>
@@ -37,7 +37,7 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title><#= ViewName #></title>
+    <title>لیست </title>
 </head>
 <body>
 <#
@@ -99,9 +99,9 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 	if (pkName != null) {
 	#>
 			<td>
-				@Html.ActionLink("Edit", "Edit", new { id=item.<#= pkName #> }) |
-				@Html.ActionLink("Details", "Details", new { id=item.<#= pkName #> }) |
-				<a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-sm btn-danger">
+				@Html.ActionLink("ویرایش", "Edit", new { id=item.<#= pkName #> }) |
+				@Html.ActionLink("جزئیات", "Details", new { id=item.<#= pkName #> }) |
+				<a href="@Url.Action("حذف", new { id = item.Id })" class="btn btn-sm btn-danger">
                     <span class="fa fa-remove"></span>
                 </a>
 			</td>
@@ -109,9 +109,9 @@ if (!String.IsNullOrEmpty(LayoutPageFile)) {
 	} else {
 	#>
 			<td>
-				@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-				@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-				@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+				@Html.ActionLink("ویرایش", "Edit", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("جزئیات", "Details", new { /* id=item.PrimaryKey */ }) |
+				@Html.ActionLink("حذف", "Delete", new { /* id=item.PrimaryKey */ })
 			</td>
 	<#
 	}

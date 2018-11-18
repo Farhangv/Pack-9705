@@ -25,7 +25,6 @@ namespace <#= Namespace #>
 {
     public class <#= ControllerName #> : Controller
     {
-        // GET: <#= routePrefix #>
         public ActionResult Index()
         {
             return View();
