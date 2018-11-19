@@ -1,0 +1,15 @@
+﻿@model JobSystem.ViewModels.JobIndexItemViewModel
+<article class="job-box col-md-12">
+    <header>
+        <img src="~/Images/Logos/@Model.CompanyLogoPath" />
+        <h4>@Model.Title</h4>
+    </header>
+    <footer class="row">
+        <div class="col-md-6">
+            @Model.CompanyName
+        </div>
+        <div class="col-md-6">
+            <a href="@Url.Action("Details","Jobs", new { id = Model.Id })">اطلاعات بیشتر</a>
+        </div>
+    </footer>
+</article>
