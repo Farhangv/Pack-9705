@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                @User.Identity.GetUserName()
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a href="@Url.Action("Edit", "Resumes")">مدیریت رزومه</a></li>
+            </ul>
+        </li>
+        <li>
+            <form method="post" action="@Url.Action("LogOff", "Account")">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-sm btn-danger navbar-btn">
+                    <span class="fa fa-power-off"></span>
+                    خروج
+                </button>
+            </form>
+        </li>
+    </ul>
+
+}
+else
+{
+    <ul class="nav navbar-nav navbar-left">
+        <li>@Html.ActionLink("ثبت نام", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("ورود", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,16 @@
+﻿@model IEnumerable<JobSystem.ViewModels.JobIndexItemViewModel>
+@{
+    ViewBag.Title = "خانه";
+}
+
+
+<div class="row">
+    @foreach (var job in Model)
+    {
+        <div class="col-md-4">
+            @Html.Partial("~/Views/Shared/_JobBox.cshtml", job)
+        </div>
+    }
+</div>
+
+
