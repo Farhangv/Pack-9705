@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - جاب جو</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header class="container">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">جاب جو</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li>
+                        @*@Html.ActionLink("خانه", "Index", "Home")*@
+                        <a href="@Url.Action("Index", "Home")">
+                            <span class="fa fa-home"></span>
+                        </a>
+                    </li>
+                    <li><a href="#">لیست مشاغل</a></li>
+                    <li><a href="#">عضویت</a></li>
+
+
+                </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            پویا شاکری
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="@Url.Action("Edit", "Resumes")">مدیریت رزومه</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa fa-power-off"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container" id="wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                @if (!string.IsNullOrEmpty(TempData["Message"]?.ToString()))
+                {
+                    <div class="alert alert-@(TempData["MessageClass"]??"success")">
+                        @TempData["Message"]
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="row">
+            <aside class="col-md-3"></aside>
+            <main class="col-md-9">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Index", "Home", new { Area = "Admin" })">ورود به بخش مدیریت</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                &copy;
+                تمامی حقوق این سیستم متعلق به ماست!
+            </div>
+        </div>
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
